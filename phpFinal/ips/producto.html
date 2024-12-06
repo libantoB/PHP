@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Vacunación</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Barra de navegación fija en la parte superior -->
+    <nav class="fixed top-0 left-0 w-full bg-blue-600 p-4 shadow-md z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Logo o título -->
+            <a href="#" class="text-white text-2xl font-bold">Vacunas IPS</a>
+            <ul class="flex space-x-6">
+                <!-- Opción Cliente (Principal) -->
+                <li>
+                    <a href="htmlCRUD.html" class="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-lg font-semibold">Cliente</a>
+                </li>
+                <!-- Opción Productos -->
+                <li>
+                    <a href="producto.html" class="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-lg font-semibold">Productos</a>
+                </li>
+                <!-- Opción Facturas -->
+                <li>
+                    <a href="paginaFactura.php" class="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-lg font-semibold">Facturas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8 mt-24 mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-6">Gestión de Productos</h2>
+        <form action="productos.php" method="POST">
+            <!-- Nombre Producto (Menú desplegable) -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombreProducto">Nombre Producto</label>
+                <select name="nombreProducto" id="nombreProducto" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Seleccione un producto</option>
+                    <option value="Pruebas de PPD">Pruebas de PPD</option>
+                    <option value="Vacuna de Varicela">Vacuna de Varicela</option>
+                    <option value="Vacuna de Polio">Vacuna de Polio</option>
+                    <option value="Vacuna de Neumococo">Vacuna de Neumococo</option>
+                </select>         
+            </div>
+
+            <!-- Lote producto -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="loteProducto">Lote producto</label>
+                <input 
+                    type="text" 
+                    name="loteProducto" 
+                    id="loteProducto" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Ingrese el lote del producto" required>
+            </div>
+
+            <!-- Valor -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="valor">Valor</label>
+                <input 
+                    type="number" 
+                    name="valor" 
+                    id="valor" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Ingrese el valor del producto" required>
+            </div>
+            <!-- Botones CRUD -->
+            <div class="grid grid-cols-2 gap-4">
+                <button 
+                    type="submit" 
+                    name="accion" 
+                    value="create" 
+                    class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Crear
+                </button>
+                <button 
+                    type="submit" 
+                    name="accion" 
+                    value="read" 
+                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Buscar
+                </button>
+                <button 
+                    type="submit" 
+                    name="accion" 
+                    value="update" 
+                    class="w-full bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Actualizar
+                </button>
+                <button 
+                    type="submit" 
+                    name="accion" 
+                    value="delete" 
+                    class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Eliminar
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
